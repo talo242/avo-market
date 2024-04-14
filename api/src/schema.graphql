@@ -1,0 +1,38 @@
+scalar DateTime
+
+type Query {
+  avocados: [Avocado!]!
+  avocado(id: ID!): Avocado
+}
+
+type Mutation {
+  createAvocado(data: CreateAvocadoInput!): Avocado!
+}
+
+interface BaseModel {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime
+  deletedAt: DateTime
+}
+
+type Avocado implements BaseModel{
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime
+  deletedAt: DateTime
+
+  name: String!
+  price: Float!
+  sku: String
+  description: String
+  image: String
+}
+
+input CreateAvocadoInput {
+  name: String!
+  price: Float!
+  sku: String
+  image: String
+  description: String
+}
