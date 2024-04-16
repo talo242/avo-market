@@ -6,15 +6,13 @@ export const AvocadoSchema = z.object({
   description: z.string().nullish(),
   price: z.number(),
   image: z.string().url().nullish(),
+  ownerId: z.string().uuid(),
 });
 
 export type Avocado = z.infer<typeof AvocadoSchema>;
 
-export const CreateAvocadoInputSchema = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  price: z.number(),
-  image: z.string().url().optional(),
+export const CreateAvocadoInputSchema = AvocadoSchema.omit({
+  id: true,
 });
 
 export type CreateAvocadoInput = z.infer<typeof CreateAvocadoInputSchema>;

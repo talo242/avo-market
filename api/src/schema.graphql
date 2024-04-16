@@ -21,7 +21,7 @@ type Avocado implements BaseModel {
   createdAt: DateTime!
   updatedAt: DateTime
   deletedAt: DateTime
-
+  ownerId: String!
   name: String!
   price: Float!
   sku: String
@@ -30,6 +30,7 @@ type Avocado implements BaseModel {
 }
 
 input CreateAvocadoInput {
+  ownerId: String!
   name: String!
   price: Float!
   sku: String
