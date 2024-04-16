@@ -9,8 +9,6 @@ export const AvocadoSchema = z.object({
   ownerId: z.string().uuid(),
 });
 
-export type Avocado = z.infer<typeof AvocadoSchema>;
-
 export const CreateAvocadoInputSchema = AvocadoSchema.omit({
   id: true,
 });
