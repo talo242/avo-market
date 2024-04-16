@@ -1,23 +1,15 @@
-import type { PrismaClient } from '@prisma/client';
 import { CreateAvocadoInput, CreateAvocadoInputSchema } from './avocado.models';
+import * as avocadoRepository from './avocado.repository';
 
-type Context = {
-  prisma: PrismaClient;
-};
+export const findAllAvocados = () => avocadoRepository.findAll();
 
-export const getAll = (_: unknown, __: unknown, { prisma }: Context) =>
-  prisma.avocado.findMany();
+export const getAvocadoById = (_: unknown, args: { id: string }) =>
+  avocadoRepository.getById(args.id);
 
-export const getOne = (_: unknown, args: { id: string }, { prisma }: Context) =>
-  prisma.avocado.findUnique({ where: { id: args.id } });
-
-export const create = async (
+export const createAvocado = async (
   _: unknown,
-  args: { data: CreateAvocadoInput },
-  { prisma }: Context
+  args: { data: CreateAvocadoInput }
 ) => {
   const data = CreateAvocadoInputSchema.parse(args.data);
-  return prisma.avocado.create({
-    data,
-  });
+  return avocadoRepository.create(data);
 };

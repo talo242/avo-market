@@ -4,10 +4,10 @@ import * as scalars from './modules/base/customScalars';
 export default {
   ...scalars,
   Query: {
-    avocados: avocado.getAll,
-    avocado: avocado.getOne,
+    avocados: avocado.findAllAvocados,
+    avocado: avocado.getAvocadoById,
   },
   Mutation: {
-    createAvocado: avocado.create,
+    createAvocado: avocado.createAvocado,
   },
 };
