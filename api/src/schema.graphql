@@ -16,7 +16,7 @@ interface BaseModel {
   deletedAt: DateTime
 }
 
-type Avocado implements BaseModel{
+type Avocado implements BaseModel {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime

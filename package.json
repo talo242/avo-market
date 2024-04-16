@@ -11,12 +11,6 @@
   "scripts": {},
   "author": "@jonalvarezz",
   "license": "MIT",
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true
-  },
   "dependencies": {
     "eslint": "7.x",
     "prettier": "^2.4.1",

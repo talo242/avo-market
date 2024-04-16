@@ -1,5 +1,5 @@
-import * as avocado from './modules/avocado/avocado.resolvers'
-import * as scalars from './modules/base/customScalars'
+import * as avocado from './modules/avocado/avocado.resolvers';
+import * as scalars from './modules/base/customScalars';
 
 export default {
   ...scalars,
@@ -10,4 +10,4 @@ export default {
   Mutation: {
     createAvocado: avocado.create,
   },
-}
+};
